@@ -1,8 +1,25 @@
 import dayjs from "dayjs";
 
 export function getExpireAt() {
-    const dia = Number(dayjs().date()).toLocaleString("pt-br", { minimumIntegerDigits: 2 });
-    const mes = Number(dayjs().month() + 2).toLocaleString("pt-br", { minimumIntegerDigits: 2 });
-    const ano = dayjs().year();
-    return `${dia}/${mes}/${ano}`;
+    const zeroFill = (n) => {
+        return n < 9 ? `0${n}` : `${n}`;
+    };
+
+    const formatDate = (date) => {
+        const d = zeroFill(date.getDate());
+        const mo = zeroFill(date.getMonth() + 1);
+        const y = zeroFill(date.getFullYear());
+        const h = zeroFill(date.getHours());
+        const mi = zeroFill(date.getMinutes());
+        const s = zeroFill(date.getSeconds());
+
+        return `${d}/${mo}/${y} ${h}:${mi}:${s}`;
+    };
+
+    const date = new Date();
+    date.setDate(date.getDate() + 30);
+
+    return (
+        formatDate(date)
+    );
 }
