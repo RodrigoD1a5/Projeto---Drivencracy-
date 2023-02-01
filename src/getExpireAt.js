@@ -1,5 +1,3 @@
-import dayjs from "dayjs";
-
 export function getExpireAt() {
     const zeroFill = (n) => {
         return n < 9 ? `0${n}` : `${n}`;
@@ -11,9 +9,8 @@ export function getExpireAt() {
         const y = zeroFill(date.getFullYear());
         const h = zeroFill(date.getHours());
         const mi = zeroFill(date.getMinutes());
-        const s = zeroFill(date.getSeconds());
 
-        return `${d}/${mo}/${y} ${h}:${mi}:${s}`;
+        return `${y}-${mo}-${d} ${h}:${mi}`;
     };
 
     const date = new Date();
