@@ -1,15 +1,22 @@
 import { db } from "../database/db.js";
 import { COLLECTION } from "../enums/collections.js";
 import { STATUS_CODE } from "../enums/statusCode.js";
+import { getExpireAt } from "../getExpireAt.js";
 
 
 
 export async function postPoll(req, res) {
-    const poll = req.body;
+    const { title, expireAt } = req.body.value;
+
+    let expireAtUpdated = expireAt;
+
+    if (expireAt === "") {
+        expireAtUpdated = getExpireAt();
+    }
 
     try {
 
-        await db.collection(COLLECTION.POLL).insertOne({ poll });
+        await db.collection(COLLECTION.POLL).insertOne({ title, expireAt: expireAtUpdated });
 
         res.sendStatus(STATUS_CODE.CREATED);
 

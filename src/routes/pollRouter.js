@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { postPoll } from "../controllers/pollController.js";
+import { postPollValidation } from "../middlewares/postPollValidation.js";
 import { validateSchema } from "../middlewares/validateSchema.js";
 import { postPollSchema } from "../schemas/postPollSchema.js";
 

@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
 import pollRouter from "./routes/pollRouter.js";
+import { getExpireAt } from "./getExpireAt.js";
 
 const server = express();
 server.use(cors());
