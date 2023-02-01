@@ -13,7 +13,7 @@ export async function postChoice(req, res) {
 
     } catch (error) {
 
-        res.status(STATUS_CODE.UNPROCESSABLE_ENTITY).send(error);
+        res.status(STATUS_CODE.SERVER_ERROR).send(error);
 
     }
 }

@@ -1,4 +1,4 @@
-export function getExpireAt() {
+export function getExpireAt(d) {
     const zeroFill = (n) => {
         return n <= 9 ? `0${n}` : `${n}`;
     };
@@ -14,7 +14,7 @@ export function getExpireAt() {
     };
 
     const date = new Date();
-    date.setDate(date.getDate() + 30);
+    date.setDate(date.getDate() + d);
 
     return (
         formatDate(date)
