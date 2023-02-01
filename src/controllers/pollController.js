@@ -6,12 +6,12 @@ import { getExpireAt } from "../getExpireAt.js";
 
 
 export async function postPoll(req, res) {
-    const { title, expireAt } = req.body.value;
+    const { title, expireAt } = req.body;
 
     let expireAtUpdated = expireAt;
 
     if (expireAt === "") {
-        expireAtUpdated = getExpireAt();
+        expireAtUpdated = getExpireAt(30);
     }
 
     try {
