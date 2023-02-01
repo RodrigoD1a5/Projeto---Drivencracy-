@@ -1,3 +1,5 @@
+//Função que retorna a data a frente d dias 
+
 export function getExpireAt(d) {
     const zeroFill = (n) => {
         return n <= 9 ? `0${n}` : `${n}`;

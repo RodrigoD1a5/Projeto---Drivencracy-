@@ -1,6 +1,7 @@
 const COLLECTION = Object.freeze({
     POLL: "poll",
-    CHOICE: "choice"
+    CHOICE: "choice",
+    VOTE: "vote"
 });
 
 export { COLLECTION };
