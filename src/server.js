@@ -11,8 +11,6 @@ const PORT = 5000;
 
 server.use(pollRouter);
 
-console.log(getExpireAt());
-
 server.listen(PORT, () => console.log(`Servidor funcionando na porta ${PORT}`))
 
 

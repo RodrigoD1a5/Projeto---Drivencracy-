@@ -26,3 +26,17 @@ export async function postPoll(req, res) {
     }
 
 }
+
+export async function getPoll(req, res) {
+    try {
+
+        const polls = await db.collection(COLLECTION.POLL).find().toArray();
+
+        res.status(STATUS_CODE.OK).send(polls);
+
+    } catch (error) {
+
+        res.status(STATUS_CODE.SERVER_ERROR).send(error);
+
+    }
+}

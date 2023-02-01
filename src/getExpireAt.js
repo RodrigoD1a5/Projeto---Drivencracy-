@@ -1,6 +1,6 @@
 export function getExpireAt() {
     const zeroFill = (n) => {
-        return n < 9 ? `0${n}` : `${n}`;
+        return n <= 9 ? `0${n}` : `${n}`;
     };
 
     const formatDate = (date) => {
