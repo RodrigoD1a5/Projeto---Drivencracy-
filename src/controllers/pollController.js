@@ -57,7 +57,7 @@ export async function resultPoll(req, res) {
     let arrayVotes = [];
 
     for (let i = 0; i < ids.length; i++) {
-        const votes = await db.collection(COLLECTION.VOTE).find({ idChoice: ids[i] }).toArray();
+        const votes = await db.collection(COLLECTION.VOTE).find({ choiceId: ids[i] }).toArray();
 
         const object = { idChoice: ids[i], votes: votes.length };
 
