@@ -9,7 +9,7 @@ export async function postVote(req, res) {
 
     try {
 
-        await db.collection(COLLECTION.VOTE).insertOne({ idChoice, date: getExpireAt(0) });
+        await db.collection(COLLECTION.VOTE).insertOne({ choiceId: idChoice, createdAt: getExpireAt(0) });
 
         res.sendStatus(STATUS_CODE.CREATED);
 

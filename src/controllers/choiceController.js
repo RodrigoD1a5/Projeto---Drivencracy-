@@ -21,8 +21,6 @@ export async function postChoice(req, res) {
 export async function getChoices(req, res) {
     const id = req.params.id;
 
-    console.log(id);
-
     const choices = await db.collection(COLLECTION.CHOICE).find({ pollId: id }).toArray();
 
     try {
